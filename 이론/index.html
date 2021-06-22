@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>객체</h2>
+    <script>
+        var person = {
+            나이 : 8,
+            성별 : '여자',
+            좋아하는거 : function(){
+                console.log('피자');
+            }
+        }
+
+        // person.나이
+        // 8
+
+        // person['나이']
+        // 8
+
+        // var sex = '성별';
+        // undefined
+
+        // person[sex];
+        // "여자"
+
+        // 대괄호로 객체의 프로퍼티를 부르면 변수를 대괄호 안에 넣을 수 있다.
+        //.뒤에 찍는 것은 변수를 넣을 수 없다.
+        //person.sex;
+        //undefined
+
+    </script>
+
+    <h2>배열</h2>
+    <script>
+        var 배열 = [
+            '사과',
+            '오렌지',
+            '포도',
+            '딸기',
+        ]
+
+        // 배열[0]
+        // "사과"
+
+        // 배열[1]
+        // "오렌지"
+
+        // 배열.length
+        // 4
+
+    </script>
+
+    <h2>window 객체</h2>
+    <p>브라우저에서 제공하는 객체, 브라우저 전체를 담당한다. 브라우저의 탭이 윈도우 객체에 해당하는 것</p>
+    <p>window는 모든 것에서 접근 가능한 전역 객체 이므로 생략 가능하다.</p>
+    <p>전역 변수 선언은 window의 프로퍼티로 저장이 된다.</p>
+
+    <dl>
+        <dt>window.document</dt>
+        <dd>화면단을 담당한다.</dd>
+        <dd>통역사 : html과 자바스크립트의 통역사</dd>
+        <dd>console.dir(document); --> 자바스크립트 객체 처럼 되어있는데 이것을 DOM(Document Object Model) 객체 라고 한다.</dd>
+    </dl>
+</body>
+</html>

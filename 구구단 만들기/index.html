@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 - 강의 보기전에 해본것</title>
+</head>
+<body>
+    <div class="container">
+        <h1>구구단</h1>
+        <div class="from">
+            <span class="random_num">5</span> X
+            <span class="random_num">6</span> =
+            <input type="text" class="answer_input" onkeyup="enterkey()">
+            <button type="button" class="submit" onclick="getResult()">정답 확인하기</button>
+            <p>
+                답변 : 
+                <span class="result"></span>
+            </p>
+        </div>
+    </div>
+    <script>
+        
+        const randomNumber = document.querySelectorAll('.random_num');
+
+        function randomNumberSetting(){
+            for(var i = 0; i<randomNumber.length; i++){
+                const rand_0_9 = Math.floor(Math.random() * 10 + 1);
+                randomNumber[i].innerHTML= rand_0_9;
+            }
+        }
+        randomNumberSetting();
+        
+
+        function getResult(){
+            const answer = document.querySelector('.answer_input').value;
+            const resultInput = document.querySelector('.result');
+            const regexp = /^[0-9]*$/;
+
+            if(answer === ''){
+                answer('아무것도 입력하지 않으셨습니다.');
+            } else if(!regexp.test(answer)){
+                alert('숫자만 입력해주세요');
+            }else{
+                let result = 1;
+                for(var i = 0; i<randomNumber.length; i++){
+                    result = result * randomNumber[i].innerText;
+                }
+                if(result === +answer){
+                    resultInput.innerHTML = '딩동댕~';
+                    document.querySelector('.answer_input').value = '';
+                    setTimeout(function(){
+                        resultInput.innerHTML = '';
+                        randomNumberSetting();
+                    }, 1000);
+                }else{
+                    resultInput.innerHTML = '땡!';
+                    answer.value = '';
+                }
+            }
+
+        }
+
+        function enterkey(){
+            if(window.event.keyCode == 13){
+                getResult();
+            }
+        }
+    </script>
+</body>
+</html>

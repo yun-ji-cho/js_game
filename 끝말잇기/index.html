@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>끝말잇기 강의 보기 전에 미리 해보기</title>
+  <style>
+    .word:after{
+      content :' - ';
+    }
+  </style>
+</head>
+<body>
+  <h1>끝말잇기</h1>
+  <div class="container">
+    <span class="word">사다리</span> 
+    <span class="createNew">
+
+    </span>
+    <input type="text" class="inputText" onkeyup="keyUp()">
+    <button type="button" onclick="EndToEnd()">pass</button>
+  </div>
+  <script>
+
+    
+
+    function EndToEnd(){
+      var wordLength = document.querySelectorAll('.word').length -1;
+      var lastword = document.querySelectorAll('.word')[wordLength].innerText;
+      var letterLength = lastword.length - 1;
+      var letterEnd = lastword[letterLength];
+      var inputText = document.querySelector('.inputText');
+      var inputTextFirstLetter = document.querySelector('.inputText').value[0];
+      var createArea = document.querySelector('.createNew');
+
+      if(letterEnd === inputTextFirstLetter){
+        var el = document.createElement('span');
+        var elText = document.createTextNode(inputText.value);
+        el.className = 'word';
+        el.appendChild(elText);
+        createArea.appendChild(el);
+        inputText.value = '';
+        
+      }else{
+        alert('다시 생각해보세요~~');
+        inputText.value = '';
+      }
+      
+    }
+
+    function keyUp(){
+      if(window.event.keyCode == 13){
+        EndToEnd();
+      }
+    }
+  </script>
+</body>
+</html>

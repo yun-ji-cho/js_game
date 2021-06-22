@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zeroCho 구구단 만들기</title>
+</head>
+<body>
+    <script>
+        while(true){ //무한으로 퀴즈 반복
+            var random1 = Math.ceil(Math.random() * 9);
+            var random2 = Math.floor(Math.random() * 9) + 1;
+            var 결과 = random1 * random2;
+            var 조건 = true;
+            while(조건){ 
+                var 답 = prompt(String(random1) + '곱하기' + String(random2) + '는?');
+                if( 결과 === Number(답)){
+                    alert('딩동댕');
+                    조건 = false;
+                }else{
+                    alert('땡');
+                }
+            }
+        }
+
+        //prompt 는 취소 누르면  null이 나온다.
+        
+        //Number(null);
+        // -> 0 
+        //Number(null) === 0 이므로 alert('떙')이 나오는것.
+        //무한반복 끄려면 shift+ ESC
+    </script>
+</body>
+</html>

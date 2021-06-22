@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>제로초 끝말잇기</title>
+
+</head>
+<body>
+  <h1>끝말잇기</h1>
+  <div class="container">
+  </div>
+  <script>
+    //방법 1) - while 문 
+    // var word = '제로초';
+    // while(true){
+    //   var answer = prompt(word);
+    //   if(word[word.length - 1] === answer[0]){
+    //     alert('딩동댕');
+    //     word = answer;
+    //   }else{
+    //     alert('다시!!!');
+    //   }
+    // }
+
+    //방법 1) - for 문 
+    for(var word = '제로초'; true; ){
+      var answer = prompt(word);
+      if(word[word.length - 1] === answer[0]){
+        alert('딩동댕');
+        word = answer;
+      }else{
+        alert('다시!!!');
+      }
+    }
+    
+  </script>
+</body>
+</html>
